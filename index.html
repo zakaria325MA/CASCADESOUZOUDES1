@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouzoud Waterfalls - Nature's Masterpiece in Morocco</title>
+    <meta name="description" content="Discover the majestic Ouzoud Waterfalls in Morocco. Experience breathtaking views, boat rides, and meet the Barbary macaque monkeys.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Ouzoud<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav.about">3la Lmakan</a></li>
+                    <li><a href="#activities" data-i18n="nav.activities">Ach Tdir</a></li>
+                    <li><a href="#tips" data-i18n="nav.tips">Nsa2i7</a></li>
+                    <li><a href="#guides" data-i18n="nav.guides">Mourchidin</a></li>
+                    <li><a href="#gallery" data-i18n="nav.gallery">Tsawar</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Twasel M3ana</a></li>
+                    <li><a href="#visit" class="nav-cta" data-i18n="nav.visit">Zourna</a></li>
+                    <li class="lang-switch">
+                        <span class="active" data-lang="dar">DAR</span> | 
+                        <span data-lang="fr">FR</span> | 
+                        <span data-lang="en">EN</span>
+                    </li>
+                    <li class="mobile-only"><a href="#" class="close-menu" data-i18n="nav.close">Sdd Menu</a></li>
+                </ul>
+                <div class="menu-overlay"></div>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-bg-slider">
+                <div class="hero-slide active" style="background-image: url('hero.png');"></div>
+                <div class="hero-slide" style="background-image: url('gallery1.png');"></div>
+                <div class="hero-slide" style="background-image: url('gallery3.png');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="fade-in"><span data-i18n="hero.title">Ajamal Lawha</span> <br> <span class="highlight" data-i18n="hero.subtitle">Tabi3iya</span></h1>
+                <p class="fade-in delay-1" data-i18n="hero.desc">Ktachf sihr dyal Chalalat Ouzoud. Fin l'ard l7emra katla9a m3a lma d'l Atlas f manidar khayali.</p>
+                <div class="cta-group fade-in delay-2">
+                    <a href="#visit" class="btn btn-primary" data-i18n="hero.cta_p">Zourna Daba</a>
+                    <a href="#about" class="btn btn-outline" data-i18n="hero.cta_s">Ktachf Ktar</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding">
+            <div class="container grid-2">
+                <div class="about-text fade-in-scroll">
+                    <span class="subtitle" data-i18n="about.subtitle">Jawharat l'Atlas</span>
+                    <h2 data-i18n="about.title">Mandhar Tabi3i Wa3r</h2>
+                    <p data-i18n="about.desc1">B toul dyal 110 mitrou, Chalalat Ouzoud hia a3la o a7san chalalat f chamal ifri9ya. Jat f village sghir smito Tanaghmeilt f l'Atlas lkbir, had l blassa kat3tik ra7a d lbal b3id 3la sda3 d lmdina.</p>
+                    <p data-i18n="about.desc2">Zourna bach tchouf zzitoun ("Ouzoud" kat3ni zzitoun b l'Amazighiya), qaws 9ozah diama kayn, o l9rouda d lmagot (Macaques) li 3aychin tema.</p>
+                    <button class="btn btn-outline" style="color: var(--primary); border-color: var(--primary); margin-left: 0;" data-activity="about-ouzoud" data-i18n="about.btn">Qra Ktar 3la Ouzoud</button>
+                </div>
+                <div class="about-stats fade-in-scroll delay-1">
+                    <div class="stat-card">
+                        <h3>110m</h3>
+                        <p>Toul</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>1000+</h3>
+                        <p>Droja</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>∞</h3>
+                        <p>Dikrayat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">3ich Tajriba d Ouzoud</span>
+                    <h2>Moughamarat Ma Tnsach</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card fade-in-scroll" data-activity="boat">
+                        <div class="card-icon">🛶</div>
+                        <h3>Tour b Lflouka</h3>
+                        <p>9erreb 7da chalalat b floukat te9lidiya mzow9in b lwerd. 7ess b rdad d lma 3la wjhek.</p>
+                        <button class="btn-text">Qra Ktar &rarr;</button>
+                    </div>
+                    <div class="card fade-in-scroll delay-1" data-activity="monkey">
+                        <div class="card-icon">🐒</div>
+                        <h3>Chouf L9rouda</h3>
+                        <p>Tsarra o chouf l9rouda d lmagot (Macaques) li drifin o 3aychin f wset chjer d zzitoun.</p>
+                        <button class="btn-text">Qra Ktar &rarr;</button>
+                    </div>
+                    <div class="card fade-in-scroll delay-2" data-activity="hike">
+                        <div class="card-icon">🥾</div>
+                        <h3>Tsarya 3la Rjlik</h3>
+                        <p>Hbet m3a triq l7emra mn lfo9 htel lte7t 3la rjlik, o tmetta3 b manadir khtira f kol dorra.</p>
+                        <button class="btn-text">Qra Ktar &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerary Planner Section -->
+        <section id="itinerary" class="section-padding">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Khattet l'Nharek</span>
+                    <h2>Barnamaj Rihla (Itinerary)</h2>
+                </div>
+                
+                <div class="itinerary-selector fade-in-scroll">
+                    <button class="itinerary-btn active" data-plan="family">👨‍👩‍👧‍👦 M3a l'Famille</button>
+                    <button class="itinerary-btn" data-plan="friends">👥 M3a Shab</button>
+                    <button class="itinerary-btn" data-plan="solo">👤 Solo (Bou7dek)</button>
+                </div>
+
+                <div class="timeline-container fade-in-scroll delay-1">
+                    <!-- Dynamic Content will be loaded here by JS -->
+                    <div class="timeline" id="timeline-content">
+                        <!-- Initial Content: Family -->
+                        <div class="timeline-item">
+                            <div class="time">09:30</div>
+                            <div class="content">
+                                <h3>Wsol o Ftour</h3>
+                                <p>Ftour f wa7d mn les cafés lfo9 m3a manidar 3la chalal.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="time">11:00</div>
+                            <div class="content">
+                                <h3>Hbot l'Te7t</h3>
+                                <p>Hbet m3a droj bchwiya, m3a waqfat bach tssawro m3a l9rouda.</p>
+                            </div>
+                        </div>
+                         <div class="timeline-item">
+                            <div class="time">12:30</div>
+                            <div class="content">
+                                <h3>Jawla b Flouka</h3>
+                                <p>Rkbo f flouka jamaciya. Tajriba zwina o machi khayba l drari sghar.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="time">14:00</div>
+                            <div class="content">
+                                <h3>Lghda (Tajine)</h3>
+                                <p>Tagine 3la 7aqqo o triqo f janb lwad. Ra7a tamma.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tips" class="section-padding">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Bach tkon ziyara mzyana</span>
+                    <h2>Nsa2i7 Mohima</h2>
+                </div>
+                <div class="tips-grid">
+                    <div class="tip-item fade-in-scroll">
+                        <div class="tip-number">01</div>
+                        <h3>Lbest Sbbat Mzyan</h3>
+                        <p>Tariq harcha chwiya fiha trab o l7jer, lbess sbbat dyal machi (baskets) bach tkon mrta7.</p>
+                    </div>
+                    <div class="tip-item fade-in-scroll delay-1">
+                        <div class="tip-number">02</div>
+                        <h3>W9ita d Ziyara</h3>
+                        <p>A7san w9t howa sba7 bekri aw l3chiya bach tfada lzahm.</p>
+                    </div>
+                    <div class="tip-item fade-in-scroll delay-2">
+                        <div class="tip-number">03</div>
+                        <h3>Fekk Sarf</h3>
+                        <p>Khlli m3ak sarf (drahem) bach tba9chich l guide ola mol flouka ola bach tchri cacahuètes l 9rouda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="amenities" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Ra7a o Mmakla</span>
+                    <h2>Fin Takol o Tbat</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card fade-in-scroll" data-activity="restaurants">
+                        <div class="card-icon">☕</div>
+                        <h3>Qhawi o Restaurants</h3>
+                        <p>Kayn bzaf d les restaurants te9lidiya 7da lma. Tmte3 b tajine o atay mch7er m3a manidar d chalal.</p>
+                        <button class="btn-text">Chouf Lblayas &rarr;</button>
+                    </div>
+                    <div class="card fade-in-scroll delay-1" data-activity="hotels">
+                        <div class="card-icon">🏨</div>
+                        <h3>Hotels o Riads</h3>
+                        <p>Kayn fin tbat mn hotels rkhasen htel riads wa3rin. Riad Cascades d'Ouzoud o Dar Imazighen houma mn a7san lblayas.</p>
+                        <button class="btn-text">Chouf Lblayas &rarr;</button>
+                    </div>
+                    <div class="card fade-in-scroll delay-2" data-activity="camping">
+                        <div class="card-icon">⛺</div>
+                        <h3>Camping</h3>
+                        <p>Ila kunto 3ziz 3likom tabi3a, kayn blayas mkhssassa l camping 9rib mn chalalat.</p>
+                        <button class="btn-text">Chouf Lblayas &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guides" class="section-padding">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Nass l'Mintaqa</span>
+                    <h2>Mourchidin Siya7iyin</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="guide-card fade-in-scroll">
+                        <div class="guide-avatar">👨🏻</div>
+                        <h3>Migo</h3>
+                        <p class="languages">Loghat: 🇬🇧 🇲🇦</p>
+                        <p>Weld l'mintaqa, 10 snin d tajriba. Kay3ref kul rokna f Ouzoud.</p>
+                        <button class="btn btn-primary btn-small book-guide" data-guide="Migo">Réserver Migo</button>
+                    </div>
+                    <div class="guide-card fade-in-scroll delay-1">
+                        <div class="guide-avatar">👨🏽</div>
+                        <h3>Hassan Boulghasoul</h3>
+                        <p class="languages">Loghat: 🇫🇷 🇪🇸</p>
+                        <p>Motakhassis f tarih l'amazigh o l'joghrafia dyal l'atlas.</p>
+                        <button class="btn btn-primary btn-small book-guide" data-guide="Hassan Boulghasoul">Réserver Hassan</button>
+                    </div>
+                    <div class="guide-card fade-in-scroll delay-2">
+                        <div class="guide-avatar">�🏽</div>
+                        <h3>Mohamed</h3>
+                        <p class="languages">Loghat: 🇬🇧 🇪🇸</p>
+                        <p>Guide siyahiya, kat3ref a7san blayas l tssawer o l'camping.</p>
+                        <button class="btn btn-primary btn-small book-guide" data-guide="Mohamed">Réserver Mohamed</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-padding">
+            <div class="container">
+                 <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Jamal Tabi3a</span>
+                    <h2>Tssawer mn Ouzoud</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in-scroll">
+                        <img src="gallery1.png" alt="9ird lmagot f Ouzoud">
+                        <div class="gallery-overlay">
+                            <h3>Lmagot (Macaques)</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in-scroll delay-1">
+                        <img src="gallery2.png" alt="Flouka f Ouzoud">
+                        <div class="gallery-overlay">
+                            <h3>Jawla b Flouka</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in-scroll delay-2">
+                        <img src="gallery3.png" alt="Ghouroub chams f Ouzoud">
+                        <div class="gallery-overlay">
+                            <h3>Manidar Ghouroub</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="visit" class="section-padding">
+             <div class="container fade-in-scroll">
+                <div class="section-header center-text">
+                    <span class="subtitle">Triq l Ouzoud</span>
+                    <h2>Kifach Twsel?</h2>
+                </div>
+                
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <div class="icon">🚌</div>
+                        <h3>Mn Marrakech</h3>
+                        <ul class="transport-details">
+                            <li><strong>Grand Taxi:</strong> ~70-100 DHs (blahsa)</li>
+                            <li><strong>Triq:</strong> N13 (Ta9riban 2h30)</li>
+                            <li><strong>Depart:</strong> Bab Doukkala</li>
+                        </ul>
+                    </div>
+                    <div class="transport-card">
+                        <div class="icon">🚖</div>
+                        <h3>Mn Beni Mellal</h3>
+                        <ul class="transport-details">
+                            <li><strong>Grand Taxi:</strong> ~40-50 DHs</li>
+                            <li><strong>Triq:</strong> R304 (Ta9riban 1h30)</li>
+                            <li><strong>Depart:</strong> Mahatta d Taxi</li>
+                        </ul>
+                    </div>
+                    <div class="transport-card">
+                        <div class="icon">🚘</div>
+                        <h3>Sayara (Tomobile)</h3>
+                        <p>Triq mzyana (goudronnée) htal Ouzoud. Kayn parking 7da lmadkhal (~10-20 DHs).</p>
+                        <a href="https://maps.google.com/?q=Ouzoud+Falls" target="_blank" class="btn btn-text">Chouf l'Map &rarr;</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+
+        <section id="practical-info" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Ma3loumat Mohima</span>
+                    <h2>Dalil l'Zair (Guide)</h2>
+                </div>
+
+                <div class="info-grid">
+                    <!-- Weather & Best Time -->
+                    <div class="info-box fade-in-scroll">
+                        <h3>☀️ A7san Weqt l Ziyara</h3>
+                        <p><strong>Rbi3 (Mars - Mai):</strong> Lma kaykon ktir o tabi3a khedra. A7san weqt l tssawer.</p>
+                        <p><strong>Sif (Juin - Aout):</strong> Kaykon l7al skhoun, mzyan l tbrrad 7da lma. (Jib 7wayj khfaf).</p>
+                        <div class="note-box">
+                            <strong>⚠️ Mohim:</strong> F lil kayt7rek lberd chwiya 7ta f sif, jib m3ak "Gilet" khafif.
+                        </div>
+                    </div>
+
+                    <!-- Market -->
+                    <div class="info-box fade-in-scroll delay-1">
+                        <h3>🛍️ Souk Ousbou3i</h3>
+                        <p>Souk kaykon nhar <strong>Tlat (Mardi)</strong>.</p>
+                        <p>Força bach tchouf ta9alid d nass d l mintaqa, tchorbi 3sel 7or, zzitoun, o lwalida te9da fliou o za3ter.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-section fade-in-scroll delay-2">
+                    <h3 class="center-text">As2ila Mtdawla (FAQ)</h3>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">Wach momkin t3oum (Swimming)? <span class="arrow">▼</span></button>
+                            <div class="accordion-content">
+                                <p>Ah, kayn blayas mkhssassa l 3awm t7t chalal. Walakin rdd balek, lma bared o kayn blayas ghar9a. 3oum ghir f blayas li fiha nass.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">Wach kayn Guichet/Banka (ATM)? <span class="arrow">▼</span></button>
+                            <div class="accordion-content">
+                                <p>L'GAB (Guichet) aqrab wa7d kayn f <strong>Azilal</strong> (25km) ola <strong>Ait Attab</strong>. Jib m3ak l'Espèces (Sarf) kafi, 7it aghlabiya mataychkdoch la carte.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">Wach triq sa7la l drari sghar / nass kbar? <span class="arrow">▼</span></button>
+                            <div class="accordion-content">
+                                <p>Kayanin droj (1000+) bach thbet lte7t. Momkin tkoun s3iba chwiya l nass kbar bzaf ola li 3ndhom poussette. Walakin kayn triq mn lfo9 katb9a fl mostawa sahla l choufa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Chnou Galo Nass</span>
+                    <h2>Ara2 Zowar (Testimonials)</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in-scroll">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Sara7a a7san voyage derto f 7yati. Tabi3a khlaba o nass driyfin. Merci bzaf l guide Migo 3la l'accueil."</p>
+                        <div class="reviewer-info">
+                            <div class="avatar">👨🏻</div>
+                            <div>
+                                <h4>Ahmed T.</h4>
+                                <span>Mn Casa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in-scroll delay-1">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Un endroit magnifique! Les singes sont adorables et le tagine au bord de l'eau était délicieux. À refaire!"</p>
+                        <div class="reviewer-info">
+                            <div class="avatar">👩🏻</div>
+                            <div>
+                                <h4>Sarah L.</h4>
+                                <span>Mn France</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in-scroll delay-2">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">"Triq chwiya s3iba f droj walakin katstahl. Manadir kat7maq. Nasi7a: Sirou sba7 bekri bach tstaghlo n'har."</p>
+                        <div class="reviewer-info">
+                            <div class="avatar">👨🏽</div>
+                            <div>
+                                <h4>Karim B.</h4>
+                                <span>Mn Rabat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header center-text fade-in-scroll">
+                    <span class="subtitle">Bghiti Tswel?</span>
+                    <h2>Twasel M3ana</h2>
+                </div>
+                <div class="contact-wrapper fade-in-scroll">
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Smiya Dyalek" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Nemra d Telephone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                             <div class="form-group">
+                                <select id="service-type">
+                                    <option value="general">Ma3loumat 3ama</option>
+                                    <option value="guide">Guide (Mourchid)</option>
+                                    <option value="hotel">Hotel / Riad</option>
+                                    <option value="activity">Activity (Flouka/Camping)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date" class="input-label">Tarikh</label>
+                                <input type="date" id="booking-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="time" class="input-label">Weqt</label>
+                                <input type="time" id="booking-time">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Message ola Mola7adat..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Réserver / Twasel</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Ouzoud.</h3>
+                    <p>Ajamal blassa f lmaghrib.</p>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Tajribat Ouzoud. Masno3 b ❤️ f lmaghrib.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Activity Details Modal -->
+    <div id="activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="Activity Image" id="modal-img">
+                </div>
+                <div class="modal-text">
+                    <h2 id="modal-title">Activity Title</h2>
+                    <p id="modal-desc">Activity Description</p>
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <span class="icon">⏱️</span>
+                            <span id="modal-time">Duration</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">💰</span>
+                            <span id="modal-price">Price</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-small close-modal-btn">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
