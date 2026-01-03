@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ouzoud Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box fade-in">
+            <h2>Marhba b Admin 👨‍💻</h2>
+            <p>Dkhel l compt dyalek bach t-gerer les reservations.</p>
+            
+            <form id="auth-form">
+                <div class="form-group">
+                    <label>Email / Username</label>
+                    <input type="text" id="auth-user" placeholder="Admin" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="auth-pass" placeholder="••••••••" required>
+                </div>
+                <div class="form-group" id="confirm-pass-group" style="display: none;">
+                    <label>Confirm Password</label>
+                    <input type="password" id="auth-pass-confirm" placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Dkhol (Login)</button>
+            </form>
+            <p class="auth-switch">Mazal ma3ndek compt? <a href="#" id="toggle-auth">Inscris-toi hna</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

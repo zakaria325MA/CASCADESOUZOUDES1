@@ -93,8 +93,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            // Get Values
             const name = document.getElementById('name').value;
-            alert(`Chokran a ${name}! Twaselna b message dyalek. Ghadi njawbouk f a9rab waqt.`);
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            const message = document.getElementById('message').value;
+
+            // Format WhatsApp Message
+            const waNumber = "212710282367"; // 0710282367 formatted for intl
+            const waMessage = `Salam, bghit nrézervi.%0A%0A👤 *Smiya:* ${name}%0A📱 *Telephone:* ${phone}%0A🏷️ *Service:* ${service}%0A📅 *Tarikh:* ${date || 'Non spécifié'}%0A🕐 *Weqt:* ${time || 'Non spécifié'}%0A💬 *Message:* ${message}`;
+
+            // Redirect
+            window.open(`https://wa.me/${waNumber}?text=${waMessage}`, '_blank');
+            
+            // Optional: Show success feedback on site
+            alert('Ghadi ndiwk l WhatsApp bach tkemmel reservation.');
             contactForm.reset();
         });
     }
@@ -397,3 +413,203 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 
 });
+
+// ==========================================
+// Admin Dashboard & Mock Database Logic
+// ==========================================
+
+const MockDB = {
+    key: 'ouzoud_reservations',
+    authKey: 'ouzoud_u',
+    
+    // Auth
+    register: (username, password) => {
+        const users = JSON.parse(localStorage.getItem(MockDB.authKey) || '[]');
+        if (users.find(u => u.username === username)) return false; // Exists
+        users.push({ username, password });
+        localStorage.setItem(MockDB.authKey, JSON.stringify(users));
+        return true;
+    },
+
+    login: (username, password) => {
+        // Default Admin
+        if (username === 'admin' && password === 'admin') return true;
+        
+        const users = JSON.parse(localStorage.getItem(MockDB.authKey) || '[]');
+        return !!users.find(u => u.username === username && u.password === password);
+    },
+
+    // Reservations
+    saveReservation: (data) => {
+        const res = JSON.parse(localStorage.getItem(MockDB.key) || '[]');
+        data.id = Date.now();
+        data.status = 'Pending';
+        data.timestamp = new Date().toLocaleString();
+        res.unshift(data);
+        localStorage.setItem(MockDB.key, JSON.stringify(res));
+        return true;
+    },
+
+    getAll: () => {
+        return JSON.parse(localStorage.getItem(MockDB.key) || '[]');
+    },
+
+    updateStatus: (id, status) => {
+        const res = JSON.parse(localStorage.getItem(MockDB.key) || '[]');
+        const idx = res.findIndex(r => r.id === id);
+        if (idx !== -1) {
+            res[idx].status = status;
+            localStorage.setItem(MockDB.key, JSON.stringify(res));
+            return true;
+        }
+        return false;
+    }
+};
+
+// Check if we are on Admin Page
+if (window.location.pathname.includes('admin.html')) {
+    // Check Auth
+    if (!sessionStorage.getItem('ouzoud_logged_in')) {
+        window.location.href = 'login.html';
+    }
+
+    // Render Dashboard
+    window.addEventListener('DOMContentLoaded', () => {
+        const resList = document.getElementById('res-list');
+        const emptyState = document.getElementById('empty-state');
+        const totalEl = document.getElementById('total-res');
+        const pendingEl = document.getElementById('pending-res');
+
+        function render() {
+            const reservations = MockDB.getAll();
+            
+            // Stats
+            if(totalEl) totalEl.textContent = reservations.length;
+            if(pendingEl) pendingEl.textContent = reservations.filter(r => r.status === 'Pending').length;
+
+            // List
+            if (reservations.length === 0) {
+                if(emptyState) emptyState.style.display = 'block';
+                if(resList) resList.innerHTML = '';
+                return;
+            }
+
+            if(emptyState) emptyState.style.display = 'none';
+            if(resList) {
+                resList.innerHTML = reservations.map(r => `
+                    <tr>
+                        <td>
+                            <strong>${r.name}</strong><br>
+                            <small style="opacity: 0.7">${r.phone}</small>
+                        </td>
+                        <td>${r.service}</td>
+                        <td>${r.date || 'N/A'}<br><small>${r.time || ''}</small></td>
+                        <td>
+                            <span class="status-badge status-${r.status.toLowerCase()}">${r.status}</span>
+                        </td>
+                        <td>
+                            ${r.status === 'Pending' ? `
+                            <button class="action-btn btn-accept" onclick="updateRes(${r.id}, 'Accepted')" title="Accept">✅</button>
+                            <button class="action-btn btn-refuse" onclick="updateRes(${r.id}, 'Refused')" title="Refuse">❌</button>
+                            ` : ''}
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        render();
+
+        // Expose update function global
+        window.updateRes = (id, status) => {
+            if(confirm('Wach mti9en?')) {
+                MockDB.updateStatus(id, status);
+                render();
+            }
+        };
+        
+        // Logout
+        window.logout = () => {
+             sessionStorage.removeItem('ouzoud_logged_in');
+             window.location.href = 'login.html';
+        }
+    });
+}
+
+// Check if we are on Login Page
+if (window.location.pathname.includes('login.html')) {
+    const authForm = document.getElementById('auth-form');
+    if (authForm) {
+        authForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const u = document.getElementById('auth-user').value;
+            const p = document.getElementById('auth-pass').value;
+            const isRegistering = document.querySelector('h2').textContent.includes('Inscris-toi');
+
+            if (isRegistering) {
+                const pConfirm = document.getElementById('auth-pass-confirm').value;
+                if (p !== pConfirm) {
+                    alert('Les mots de passe ma mtbqinch.');
+                    return;
+                }
+                
+                if (MockDB.register(u, p)) {
+                    alert('Mrehba! Daba tqdar tconnecta.');
+                    location.reload();
+                } else {
+                    alert('Had smiya dejà kayna.');
+                }
+            } else {
+                if (MockDB.login(u, p)) {
+                    sessionStorage.setItem('ouzoud_logged_in', 'true');
+                    window.location.href = 'admin.html';
+                } else {
+                    alert('Ma3loumat ghalta.');
+                }
+            }
+        });
+    }
+
+    const toggleBtn = document.getElementById('toggle-auth');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const h2 = document.querySelector('h2');
+            const btn = document.querySelector('button');
+            const link = document.getElementById('toggle-auth');
+            const confirmGroup = document.getElementById('confirm-pass-group');
+            const confirmInput = document.getElementById('auth-pass-confirm');
+            
+            if (h2.textContent.includes('Marhba')) {
+                h2.textContent = 'Inscris-toi 📝';
+                btn.textContent = 'Sjel (Register)';
+                link.textContent = '3ndek compt? Dkhol hna';
+                confirmGroup.style.display = 'block';
+                confirmInput.required = true;
+            } else {
+                h2.textContent = 'Marhba b Admin 👨‍💻';
+                btn.textContent = 'Dkhol (Login)';
+                link.textContent = 'Inscris-toi hna';
+                confirmGroup.style.display = 'none';
+                confirmInput.required = false;
+            }
+        });
+    }
+}
+
+// Hook into Contact Form on Index to Save Data
+const mainContactForm = document.getElementById('contact-form');
+if (mainContactForm) {
+    // We add a listener to capture the data before the redirect happens (or in parallel)
+    mainContactForm.addEventListener('submit', () => {
+         const data = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            service: document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text,
+            date: document.getElementById('booking-date').value,
+            time: document.getElementById('booking-time').value,
+            message: document.getElementById('message').value
+         };
+         MockDB.saveReservation(data);
+    });
+}
